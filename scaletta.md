@@ -13,5 +13,16 @@
   - "Scope" (inglese) di un Namespace ~ **pag.12**
   - Le tre partizioni di nome di un Namespace ~ **pag.12**
 
+## DTD (primo file / fonti esterne)
+  - da definire
+
 ## XML (secondo file - XMLSchema)
-  - coming soon...
+  - Cos'è XML Schema **pag.2**
+  - Gestione dei tipi con XML Schema ~ **pag.4 + pag.9 + pag.10 + pag.18**
+  - Esempio facile di un file XML e del suo XSD (diverso da quello proposto dal file) ~ **pag.5**
+  - Struttura di un file XSD ~ **pag.7**
+  - Definizione e dichiarazione di tipi in un file XSD ~ **pag.11 fino a pag.16**
+  - Derivazione di tipi semplici ~ **pag.19**
+  - Facet (cioè dominio di un tipo derivato) ~ **pag.20 fino a pag.28**
+  - Tipi complessi (introduzione) ~ **pag.29 fino a pag.41**
+  - Attributi ~ **pag.42**
