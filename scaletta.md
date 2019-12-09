@@ -17,7 +17,7 @@
   - da definire
 
 ## XML (secondo file - XMLSchema)
-  - Cos'è XML Schema **pag.2**
+  - Cos'è XML Schema ~ **pag.2**
   - Gestione dei tipi con XML Schema ~ **pag.4 + pag.9 + pag.10 + pag.18**
   - Esempio facile di un file XML e del suo XSD (diverso da quello proposto dal file) ~ **pag.5**
   - Struttura di un file XSD ~ **pag.7**
