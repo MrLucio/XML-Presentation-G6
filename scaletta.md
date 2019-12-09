@@ -1,4 +1,4 @@
-XML (primo file)
+XML (primo file - XML e DTD)
 	- Cos'è XML
 	- Cosa non è XML ~ punto 1.4 della pagina 2
 	- Come è fatto un tag XML (sintassi, apertura e chiusura di quest'ultimo) ~ fine pag.6
@@ -12,3 +12,6 @@ XML (primo file)
 	- Cosa sono i namespace ~ pag.11
 	- "Scope" (inglese) di un Namespace ~ pag.12
 	- Le tre partizioni di nome di un Namespace ~ pag.12
+
+XML (secondo file - XMLSchema)
+	coming soon...
