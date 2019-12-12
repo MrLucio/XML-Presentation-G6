@@ -37,28 +37,181 @@
 		<div class="slides">
 			<!--
 				SLIDES ANGELO
-			-->
+			
 			<section>
 				<section>
 					<div class="fragment" id="a-1">A</div>
 				</section>
 			</section>
+			-->
 
 			<!--
 				SLIDES DAVID
-			-->
 			<section>
 				<section>
 					<div class="fragment" id="d-1">D</div>
 				</section>
 			</section>
+			-->
 
 			<!--
 				SLIDES LUCIANO
 			-->
 			<section>
 				<section>
-					<div class="fragment" id="l-1">L</div>
+					<div class="fragment" id="l-1">
+						<h2>
+							<strong style="color: #76ff03;">XML</strong>
+							Schema
+						</h2>
+						<p class="fragment">
+							Sviluppato dal
+							<strong style="color: #2196f3">W</strong>orld
+							<strong style="color: #2196f3">W</strong>ide
+							<strong style="color: #2196f3">W</strong>eb Consortium
+						</p>
+					</div>
+				</section>
+				<section>
+					<h3 class="fragment">Funziona come un <strong style="color: #2196f3;">DTD</strong></h3>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">Ma si basa su <strong style="color: #76ff03;">XML</strong></div>
+						<div class="fragment">È quindi analizzabile da un parser <strong style="color: #76ff03;">XML</strong></div>
+					</div>
+				</section>
+				<section>
+					<div class="fragment">
+						<h4>Con <strong style="color: #76ff03;">XML</strong> Schema possiamo definire:</h4>
+						<ul>
+							<li class="fragment">elementi</li>
+							<li class="fragment">attributi</li>
+							<li class="fragment">ordine dei tag</li>
+							<li class="fragment"><span style="color: #ff8a80">tipi</span> di dati</li>
+							<li class="fragment">e molto altro</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2 class="fragment fade-right">Estensibile</h2>
+					<p class="fragment">e</p>
+					<h2 class="fragment fade-left">riutilizzabile</h2>
+				</section>
+				<section>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<h4>Si possono definire diversi tipi di dato</h4>
+							<ul>
+								<li>integer</li>
+								<li>float</li>
+								<li>string</li>
+								<li>date</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<div class="fragment-stack">
+							<div class="fragment">
+								<h3>oppure</h3>
+								<p>È possibile applicare delle <strong style="color: #f21a28">restrizioni</strong> sui dati</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Esempio di un file <strong style="color: #76ff03;">XML</strong></h3>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="1-7">
+						<?xml version="1.0"?>
+						<computer>
+							<cpu>Intel 8080</cpu>
+							<ram>64mb</ram>
+							<mobo>M320x</mobo>
+							<psu>YeetPower 20W</psu>
+						</computer>
+					</code></pre>
+				</section>
+				<section>
+					<h3>Esempio del suo file <strong style="color: #2196f3;">XSD</strong></h3>
+					<div class="fragment-stack">
+						<pre class="fragment"><code class="html" data-trim data-line-numbers="3-5">
+							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type=computerType /&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType name="computerType"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
+							&lt;/xs:schema&gt;
+						</code></pre>
+						<pre class="fragment"><code class="html" data-trim data-line-numbers="6-9">
+							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type=computerType /&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType name="computerType"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type=xs:string&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
+							&lt;/xs:schema&gt;
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>Collegare un file <strong style="color: #76ff03;">XML</strong> a uno schema <strong style="color: #2196f3;">XSD</strong></h4>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="2-4">
+						&lt;?xml version="1.0"?&gt;
+						&lt;computer
+						&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						&nbsp;&nbsp;xsi:noNamespaceSchemaLocation="http://mysite.it/msg.xsd"&gt;
+						&nbsp;&nbsp;&lt;cpu&gt;Intel 8080&lt;/cpu&gt;
+						&nbsp;&nbsp;&lt;ram&gt;64mb&lt;/ram&gt;
+						&nbsp;&nbsp;&lt;mobo&gt;M320x&lt;/mobo&gt;
+						&nbsp;&nbsp;&lt;psu&gt;YeetPower 20W&lt;/psu&gt;
+						&lt;/computer&gt;
+					</code></pre>
+				</section>
+				<section>
+					<p class="fragment">L'<span style="color: #2196f3">attributo</span> va inserito all'interno del <strong>tag radice</strong></p>
+					<div class="fragment-stack">
+						<p class="fragment fade-in-then-out">Questo definirà il <strong style="color: #ff8a80;">namespace</strong></p>
+						<p class="fragment fade-in-then-out">ma non validerà automaticamente il documento <strong style="color: #76ff03;">XML</strong>!</p>
+						<p class="fragment">
+							Il documento <strong style="color: #76ff03;">XML</strong> associato allo schema prende il nome di <strong style="color: #f21a28">documento istanza</strong>
+						</p>
+					</div>
+				</section>
+				<section>
+					<h3>Tipi di elementi e attributi</h3>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out twocolumns" style="margin-top: 60px;">
+							<div>
+								<h4 style="color: #2196f3">semplici</h4>
+								<ul>
+									<li>primitivi</li>
+									<li>derivati</li>
+								</ul>
+							</div>						
+							<div>
+								<h4 style="color: #f21a28">complessi</h4>
+								<ul>
+									<li>dsa</li>
+									<li>eqw</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fragment" style="margin-top: 60px;">
+							Gli <span style="color: #76ff03;">elementi</span> possono essere di tipo <strong style="color: #2196f3">semplice</strong> o <strong style="color: #f21a28">complesso</strong> mentre gli <span style="color: #ff8a80">attributi</span> possono essere solo di tipo <strong style="color: #2196f3">semplice</strong> 
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Definizione e dichiarazione</h3>
+					<img class="fragment grid-img" style="border: 0px; margin-top: 30px;" src="img/definizione_dichiarazione.png">
 				</section>
 			</section>
 
