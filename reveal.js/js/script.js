@@ -26,13 +26,11 @@ Reveal.addEventListener('fragmentshown', function (event) {
 
         OVIDIU
 
-    if (event.fragment.id === 'o-1' && !oshown[0]) {
-        setTimeout(function () {
-            consoleText(['program'], 'o-program', ['#76ff03'], 500, 'program');
-            oshown[0] = true;
-        }, 500);
-    }
     */
+
+    if (event.fragment.id === 'o-1') {
+        startSpeaking('ovidiu-footer');
+    }
 
 
     /*
@@ -41,7 +39,7 @@ Reveal.addEventListener('fragmentshown', function (event) {
       
     */
 
-    if (event.fragment.id === 'l-1' && !lshown[0]) {
+    if (event.fragment.id === 'l-1') {
         startSpeaking('luciano-footer');
     }
 
@@ -51,19 +49,19 @@ Reveal.addEventListener('fragmentshown', function (event) {
 
     */
 
-    if (event.fragment.id === 'd-1' && !dshown[1]) {
+    if (event.fragment.id === 'd-1') {
         startSpeaking('david-footer');
     }
     
 
-
-
     /*
 
         ANGELO
+    
+        */
 
-    if (event.fragment.id === 'a-1' && !ashown[0]) {
-
-    }*/
+    if (event.fragment.id === 'a-1') {
+        startSpeaking('angelo-footer');
+    }
 
 });
