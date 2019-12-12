@@ -131,31 +131,31 @@
 				<section>
 					<h3>Esempio del suo file <strong style="color: #2196f3;">XSD</strong></h3>
 					<div class="fragment-stack">
-						<pre class="fragment"><code class="html" data-trim data-line-numbers="3-5">
+						<pre class="fragment"><code class="html" data-trim data-line-numbers="2-4">
 							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type=computerType /&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type="computerType" /&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType name="computerType"&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&#9;&lt;xs:sequence&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type="xs:string"&gt;
+							&#9;&lt;/xs:sequence&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
 							&lt;/xs:schema&gt;
 						</code></pre>
 						<pre class="fragment"><code class="html" data-trim data-line-numbers="6-9">
 							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type=computerType /&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type="computerType" /&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType name="computerType"&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type=xs:string&gt;
-							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&#9;&lt;xs:sequence&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="cpu" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="ram" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="mobo" type="xs:string"&gt;
+							&#9;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="psu" type="xs:string"&gt;
+							&#9;&lt;/xs:sequence&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
 							&lt;/xs:schema&gt;
 						</code></pre>
@@ -212,6 +212,74 @@
 				<section>
 					<h3>Definizione e dichiarazione</h3>
 					<img class="fragment grid-img" style="border: 0px; margin-top: 30px;" src="img/definizione_dichiarazione.png">
+				</section>
+				<section>
+					<h3>Dichiarazione inline</h3>
+					<img class="fragment grid-img" style="border: 0px; margin-top: 30px;" src="img/definizione_inline.png">
+				</section>
+				<section>
+					<h4>Tipo semplice predefinito</h4>
+					<div class="twocolsrows">
+						<h4>XSD</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-4">
+							&lt;xs:element name="nomeNegozio" type="xs:string"&gt;
+							&lt;xs:element name="numeroDipendenti" type="xs:positiveInteger"&gt;
+							&lt;xs:element name="dataApertura" type="xs:date"&gt;
+							&lt;xs:element name="apertoDomenica" type="xs:boolean"&gt;
+						</code></pre>
+						<h4>Istanza</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-4">
+							&lt;nomeNegozio&gt;Adigeo&lt;/nomeNegozio&gt;
+							&lt;numeroDipendenti&gt;200&lt;/numeroDipendenti&gt;
+							&lt;dataApertura&gt;30-03-2017&lt;/dataApertura&gt;
+							&lt;apertoDomenica&gt;true&lt;/apertoDomenica&gt;
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>Tipo complesso</h4>
+					<div class="twocolsrows">
+						<h4>XSD</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-7">
+							&lt;xs:complexType name="NegozioType"&gt;
+							&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="nomeNegozio" type="xs:string"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="numeroDipendenti" type="xs:positiveInteger"&gt;
+							&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&lt;/xs:complexType&gt;
+							&lt;xs:element name="Negozio" type="NegozioType"&gt;
+						</code></pre>
+						<h4>Istanza</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-4">
+							&lt;Negozio&gt;
+							&nbsp;&nbsp;&nbsp;&lt;nomeNegozio&gt;Adigeo&lt;/nomeNegozio&gt;
+							&nbsp;&nbsp;&nbsp;&lt;numeroDipendenti&gt;200&lt;/numeroDipendenti&gt;
+							&lt;/Negozio&gt;
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>Definizione inline di tipo complesso</h4>
+					<div class="twocolsrows">
+						<h4>XSD</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-8">
+							&lt;xs:element name="Negozio"&gt;
+							&nbsp;&nbsp;&nbsp;&lt;xs:complexType name="NegozioType"&gt;
+							&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="nomeNegozio" type="xs:string"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="numeroDipendenti" type="xs:positiveInteger"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+							&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
+							&lt;/xs:element&gt;
+						</code></pre>
+						<h4>Istanza</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-4">
+							&lt;Negozio&gt;
+							&nbsp;&nbsp;&nbsp;&lt;nomeNegozio&gt;Adigeo&lt;/nomeNegozio&gt;
+							&nbsp;&nbsp;&nbsp;&lt;numeroDipendenti&gt;200&lt;/numeroDipendenti&gt;
+							&lt;/Negozio&gt;
+						</code></pre>
+					</div>
 				</section>
 			</section>
 
