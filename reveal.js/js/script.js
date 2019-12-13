@@ -7,7 +7,7 @@ var ashown = Array(10).fill(false);
 
 authorIds = ['ovidiu-footer', 'david-footer', 'luciano-footer', 'angelo-footer'];
 
-function startSpeaking(id, fontSize='1.5em', fontWeight='bolder', color='yellow'){
+function startSpeaking(id, fontSize='1.4em', fontWeight='bolder', color='white'){
 
     authorIds.forEach(aId => {
         document.getElementById(aId).style.fontSize = '1em';
