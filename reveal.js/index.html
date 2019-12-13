@@ -131,7 +131,7 @@
 				<section>
 					<h3>Esempio del suo file <strong style="color: #2196f3;">XSD</strong></h3>
 					<div class="fragment-stack">
-						<pre class="fragment"><code class="html" data-trim data-line-numbers="2-4">
+						<pre class="fragment"><code class="html" data-trim data-line-numbers="2-4,11-12">
 							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type="computerType" /&gt;
@@ -145,7 +145,7 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;
 							&lt;/xs:schema&gt;
 						</code></pre>
-						<pre class="fragment"><code class="html" data-trim data-line-numbers="6-9">
+						<pre class="fragment"><code class="html" data-trim data-line-numbers="5-10">
 							&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 							&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
 							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="computer" type="computerType" /&gt;
@@ -214,12 +214,12 @@
 					<img class="fragment grid-img" style="border: 0px; margin-top: 30px;" src="img/definizione_dichiarazione.png">
 				</section>
 				<section>
-					<h3>Dichiarazione inline</h3>
+					<h3>Definizione inline</h3>
 					<img class="fragment grid-img" style="border: 0px; margin-top: 30px;" src="img/definizione_inline.png">
 				</section>
 				<section>
 					<h4>Tipo semplice predefinito</h4>
-					<div class="twocolsrows">
+					<div class="tworows" style="grid-template-columns: 1fr 1fr;">
 						<h4>XSD</h4>
 						<pre><code class="xml" data-trim data-line-numbers="1-4">
 							&lt;xs:element name="nomeNegozio" type="xs:string"&gt;
@@ -238,7 +238,7 @@
 				</section>
 				<section>
 					<h4>Tipo complesso</h4>
-					<div class="twocolsrows">
+					<div class="tworows" style="grid-template-columns: 1fr 1fr;">
 						<h4>XSD</h4>
 						<pre><code class="xml" data-trim data-line-numbers="1-7">
 							&lt;xs:complexType name="NegozioType"&gt;
@@ -260,7 +260,7 @@
 				</section>
 				<section>
 					<h4>Definizione inline di tipo complesso</h4>
-					<div class="twocolsrows">
+					<div class="tworows" style="grid-template-columns: 1fr 1fr;">
 						<h4>XSD</h4>
 						<pre><code class="xml" data-trim data-line-numbers="1-8">
 							&lt;xs:element name="Negozio"&gt;
@@ -278,6 +278,105 @@
 							&nbsp;&nbsp;&nbsp;&lt;nomeNegozio&gt;Adigeo&lt;/nomeNegozio&gt;
 							&nbsp;&nbsp;&nbsp;&lt;numeroDipendenti&gt;200&lt;/numeroDipendenti&gt;
 							&lt;/Negozio&gt;
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h3 class="fragment">Un tipo di dato consiste di:</h3>
+					<ul class="fragment">
+						<li>uno spazio di valori</li>
+						<li>uno spazio lessicale</li>
+						<li>un insieme di <strong style="color: #2196f3">facet</strong></li>
+					</ul>
+				</section>
+				<section>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<h3>Spazio di valori</h3>
+							L'insieme dei valori che un certo dato può assumere
+						</div>
+						<div class="fragment fade-in-then-out">
+							<h3>Spazio lessicale</h3>
+							L'insieme delle stringhe che rappresentano un valore
+						</div>
+						<div class="fragment fade-in-then-out">
+							<h3>Insieme di <strong style="color: #2196f3">facet</strong></h3>
+							Utilizzate per restringere valori del tipo base
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Tipi predefiniti</h3>
+					<ul>
+						<li>string</li>
+						<li>decimal</li>
+						<li>float</li>
+						<li>double</li>
+						<li>boolean</li>
+						<li>dateTime</li>
+						<li>date</li>
+						<li>time</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="fragment">Derivare un tipo semplice</h3>
+					<h4 class="fragment">e restringere il suo campo di valori</h4>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="1-5">
+						&lt;xs:simpleType name="punteggio"&gt;
+						&nbsp;&nbsp;&nbsp;&lt;xs:restriction base="integer"&gt;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...facets
+						&nbsp;&nbsp;&nbsp;&lt;/restriction&gt;
+						&lt;/xs:simpleType&gt;
+					</code></pre>
+				</section>
+				<section>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<h4>I <strong style="color: #2196f3">facets</strong> restringono un tipo di dato</h4>
+							<h4>e ogni tipo di dato può essere ristretto in modo diverso</h4>
+						</div>
+						<div class="fragment">
+							<h3>Tipologie di restrizioni:</h3>
+							<ul style="margin-top: 20px;">
+								<li>
+									<em>Intervalli</em>, numerici e di date
+								</li>
+								<li>
+									<em>Limitazioni</em> di lunghezza sulle stringhe
+								</li>
+								<li>
+									<em>Rappresentazioni</em> specifiche di tipi numerici
+								</li>
+								<li>
+									<em>Enumerazioni</em>
+								</li>
+								<li>
+									<em>Vincoli</em> di restrizioni tramite pattern (regex)
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3><strong style="color: #2196f3">Facets</strong> - Intervalli numerici</h3>
+					<div class="tworows" style="grid-template-columns: 20% 80%;">
+						<h4>Exclusive</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-6">
+							&lt;xs:simpleType name="punteggio"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:restriction base="integer"&gt;
+							&#9;&lt;xs:minExclusive value="0" \&gt;
+							&#9;&lt;xs:maxExclusive value="100" \&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/restriction&gt;
+							&lt;/xs:simpleType&gt;
+						</code></pre>
+						<h4>Inclusive</h4>
+						<pre><code class="xml" data-trim data-line-numbers="1-6">
+							&lt;xs:simpleType name="punteggio"&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:restriction base="integer"&gt;
+							&#9;&lt;xs:minInclusive value="0" \&gt;
+							&#9;&lt;xs:maxInclusive value="100" \&gt;
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/restriction&gt;
+							&lt;/xs:simpleType&gt;
 						</code></pre>
 					</div>
 				</section>

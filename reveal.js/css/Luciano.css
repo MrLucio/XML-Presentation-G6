@@ -1,25 +1,24 @@
 .fragment-stack {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
 }
 
-.fragment-stack .fragment{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+.fragment-stack .fragment {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
-.twocolsrows{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
+.tworows {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
-ul ul{
-    margin-left:60px !important;
+ul ul {
+  margin-left: 60px !important;
 }
