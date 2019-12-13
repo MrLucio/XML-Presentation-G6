@@ -49,12 +49,88 @@
 			<!--
 				SLIDES DAVID
 			-->
+<<<<<<< Updated upstream
 
 			<section>
 				<section>
 					<div class="fragment" id="d-1">DAVID</div>
 				</section>
 			</section>
+=======
+			<section>
+				<section>
+					<div class="fragment" id="d-1">
+						<h1 class="fragment">DTD</h1>
+						<p class="fragment fade-up" style="display:inline-block">
+							Document
+						</p>
+						<p class="fragment fade-down" style="display: inline-block;">
+							Type
+						</p>
+						<p class="fragment fade-up" style="display: inline-block;">
+							Definition
+						</p>
+					</div>
+				</section>
+				<section>
+					<h3 class="fragment fade-left" style="color:#76ff03">Elementi</h3><br>
+					<h3 class="fragment fade-right" style="color: #f21a28;">Attributi</h3><br>
+					<h3 class="fragment fade-left" style="color:aqua">Entità</h3>
+				</section>
+				<section>
+					<p>Un documento è<span class="fragment" style="color: #ff8a80;"> ben strutturato</span> se segue delle semplici regole di sintassi
+					, ed è <span class="fragment" style="color:#76ff03;">valido</span> se specifica e si adegua ad un DTD</p>
+				</section>
+				<section>
+					<h2>Perché usare DTD?</h2>
+					<ul>
+						<li class="fragment">Tag: cosa, quando, dove e gli attributi</li>
+						<li class="fragment">Permette all'XML di essere verificato legalmente</li>
+						<li class="fragment">Condivisione tra gruppi, coerenza strutturale</li>
+					</ul>
+				</section>
+				<section>
+					<h2>I Parser</h2>
+					<p class="fragment">Chiamati anche analizzatori, sono delle API
+						che confrontano il documento XML con un DTD, segnalando gli eventuali errori
+					</p>
+				</section>
+				<section>
+					<h2 style="color: #76ff03;">Elementi</h2>
+					<ul>
+						<li class="fragment">Suffissi</li>
+						<p class="fragment">?&emsp;-->&emsp;opzionale&emsp;-->&emsp;foreword?</p>
+						<p class="fragment">+&emsp;-->&emsp;uno o più&emsp;-->&emsp;chapter+</p>
+						<p class="fragment">*&emsp;-->&emsp;zero o più&emsp;-->&emsp;appendix*</p>
+						<li class="fragment">Separatori</li>
+						<p class="fragment">,&emsp;-->&emsp;entrambi (and)&emsp;-->&emsp;foreword?, chapter+</p>
+						<p class="fragment">|&emsp;-->&emsp;oppure (or)&emsp;-->&emsp;section|chapter</p>
+					</section>
+					<section>
+						<li class="fragment" style="text-align: left;">Raggruppamento</li>
+						<p class="fragment" style="text-align: left;">()&emsp;-->&emsp;raggruppa&emsp;-->&emsp;(section|chapter)+</p>
+					</ul>
+					</section>
+				<section>
+					<h2 style="color:#76ff03">Tipi di elementi</h2>
+						<code>
+							<!ELEMENT nome categoria>
+						</code>
+						<ul>
+							<li>
+								Senza figli(EMPTY): nessun contenuto tra l'inizio e la fine del tag, ha attributi però
+							</li>
+							<li>
+								Figli non strutturati: come categoria ANY oppure #PCDATA
+							</li>
+							<li>
+								Elementi con figli: c'è una parentesi che raggruppa tutti i figli (almeno uno) e ognuno di loro può avere a sua volta altri figli
+							</li>
+						</ul>
+				</section>
+			</section>
+			
+>>>>>>> Stashed changes
 
 			<!--
 				SLIDES LUCIANO
