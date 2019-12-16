@@ -41,7 +41,7 @@
 
 			<section>
 				<section>
-					<h2 style="color: lightgreen;" class="fragment" id="a-1">XML</h2>
+					<h2 style="color: lightgreen;">XML</h2>
 					<div class="threecolumns" style="margin-top: 80px;">
 						<div class="fragment fade-right">
 							<h3>E<span style="color: lightgreen;">X</span>STENSIBLE</h3>
@@ -56,22 +56,17 @@
 				</section>
 				<section>
 					<p>È un linguaggio a marcature dette</p>
-					<p class="fragment fade-up" style="color: lightgreen;">&ltTAG&gt</p>
-					<p class="fragment">
-						che permettono di descrivere il contenuto del documento.
-					</p>
+					<h2 class="fragment fade-up" style="color: lightgreen;">&ltTAG&gt</h2>
 				</section>
 				<section>
 					<h3 style="color: lightgreen;">
 						UTILIZZO
 					</h3>
 					<p>
-						XML è stato progettato per trattare la descrizione delle informazioni,
-						cioè concentra l'attenzione sul significato dei dati.
+						<span style="color: lightgreen">XML</span> si concentra sul significato dei 
+						<span style="color: lightgreen">dati</span>
 					</p>
 				</section>
-			</section>
-			<section>
 				<section>
 					<h2 style="color: lightblue;">&ltTAG&gt</h2>
 				</section>
@@ -80,8 +75,8 @@
 						DEFINIZIONE
 					</h3>
 					<p>
-						Sono delle marcature utilizzabili per creare un documento e sono definite in base alla tipologia
-						dei dati da descrivere
+						Sono delle marcature utilizzate per creare un documento e sono definite in base 
+						ai dati da descrivere
 					</p>
 				</section>
 				<section>
@@ -92,23 +87,31 @@
 						Le marcature indicano in maniera non ambigua il significato
 						di ciascun dato
 					</p>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="1-7">
+						<?xml version="1.0"?>
+						<Dati>
+							<nome>Bob</nome>
+						</Dati>
+					</code></pre>
 				</section>
 				<section>
 					<h3 style="color: lightblue;">
 						Struttura
 					</h3>
 					<p>
-						i tag si dividono in:
+						I tag si dividono in:
 					</p>
-					<p class="fragment fade-right">
-						tag di apertura <span style="color: lightblue;">&ltTAG&gt</span>
-					</p>
-					<p class="fragment fade-right">
-						tag di chiusura <span style="color: lightblue;">&lt/TAG&gt</span>
-					</p>
-					<p class="fragment fade-right">
-						tag vuoti <span style="color: lightblue;">&ltTAG/&gt</span>
-					</p>
+					<ul>
+						<li class="fragment fade-right">
+							tag di apertura <span style="color: lightblue;">&ltTAG&gt</span>
+						</li>
+						<li class="fragment fade-right">
+							tag di chiusura <span style="color: lightblue;">&lt/TAG&gt</span>
+						</li>
+						<li class="fragment fade-right">
+							tag vuoti <span style="color: lightblue;">&ltTAG/&gt</span>
+						</li>
+					</ul>
 				</section>
 				<section>
 					<h3 style="color: lightblue;">
@@ -117,31 +120,22 @@
 					<p>
 						Xml è un metalinguaggio case sensitive
 					</p>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h3 style="color:orange">
-						A COSA SERVE
-					</h3>
-					<h2>XML</h2>
+					<p class="fragment">&ltNome&gt <span class="fragment">&nbsp&nbsp ≠ &nbsp&nbsp</span>&ltnome&gt</p>
 				</section>
 				<section>
 					<h3 style="color: orange;">
-						FUNZIONE
+						ALTRE CARATTERISTICHE
 					</h3>
-					<p>
-						XML non è orientato ad uno specifico tipo di elaborazione.
+					<p class="fragment">
+						XML non è orientato
 					</p>
-					<p>
-						È stato creato esclusivamente per strutturare, memorizzare e scambiare informazioni
+					<p class="fragment">
+						Struttura, memorizza e scambia informazioni
 					</p>
-					<p>
-						Non è contiene alcuna istruzione per elaborazione dei dati
+					<p class="fragment">
+						Non è contiene alcuna istruzione 
 					</p>
 				</section>
-			</section>
-			<section>
 				<section>
 					<h3 style="color: lightgrey;">
 						benefici di
@@ -153,8 +147,7 @@
 						SCAMBIO DATI
 					</h3>
 					<p>
-						XML riduce fortemente la complessità dei programmi e crea documenti
-						che possono essere letti da molte applicazioni di tipo diverso.
+						XML riduce la complessità dei programmi e li rende leggibili ad applicazioni diverse.
 					</p>
 				</section>
 				<section>
@@ -162,9 +155,8 @@
 						applicazioni web più potenti
 					</h3>
 					<p>
-						il linguaggio XML consente di evidenziare, attraverso i propri tag,
-						la semantica di un testo, semplificando la creazione
-						di applicazioni che elaborano documenti elettronici
+						XML evidenzia, con i propri tag, la semantica di un testo, 
+						semplificando la creazione di elaboratori di documenti elettronici
 					</p>
 				</section>
 				<section>
@@ -172,8 +164,7 @@
 						applicazioni web più flessibili
 					</h3>
 					<p>
-						I documenti basati sull'XML possono essere utilizzati dal Web client,
-						elaborando i dati che vi sono contenuti in differenti processi software
+						I documenti XML possono essere elaborati da differenti processi software
 						non predeterminati
 					</p>
 				</section>
@@ -183,12 +174,9 @@
 					</h3>
 					<p>
 						L'autore di un documento XML può creare nuovi tag per descrivere i contenuti
-						semantici dei propri dati, semplificando il loro scambio fra i gruppi di persone
-						interessate allo stesso settore.
+						semantici dei propri dati
 					</p>
 				</section>
-			</section>
-			<section>
 				<section>
 					<h3 style="color: lightyellow;">
 						attributi
@@ -209,15 +197,13 @@
 					</h3>
 					<p>
 						Un attributo è una coppia nome-valore tra apici doppi, separata da un segno di uguale
-					</p>
-				</section>
-				<section>
-					<h3 style="color: lightyellow;">
-						esempio
-					</h3>
-					<h3>
-						&ltTAG="Attributo"&gt&lt/TAG&gt
-					</h3>
+					</p><br>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="3">
+						<?xml version="1.0"?>
+						<Dati>
+							<nome attribute="value">Bob</nome>
+						</Dati>
+					</code></pre>
 				</section>
 				<section>
 					<h3 style="color: lightyellow;">
@@ -227,11 +213,6 @@
 						<li class="fragment fade-right">
 							<p>
 								non possono contenere valori multipli
-							</p>
-						</li>
-						<li class="fragment fade-right">
-							<p>
-								sono difficilmente espandibili
 							</p>
 						</li>
 						<li class="fragment fade-right">
@@ -251,55 +232,49 @@
 						</li>
 						<li class="fragment fade-right">
 							<p>
-								non hanno un supporto standard per la gestione dei programmi
+								non hanno uno standard nella gestione
 							</p>
 						</li>
 					</ul>
 				</section>
-			</section>
-			<section>
 				<section>
 					<h3 style="color: mediumpurple;">
-						commenti
+						commenti e testi
 					</h3>
 				</section>
 				<section>
 					<h3 style="color: mediumpurple;">
-						Struttura
+						Commenti: Struttura
 					</h3>
 					<p>
-						I commenti possono essere inseriti tra i segni &lt!--
+						I commenti sono inseriti tra i segni &lt!--
 						e --&gt
-					</p>
+					</p><br>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="3">
+						<?xml version="1.0"?>
+						<Dati>
+							<!-- questo è un commento -->
+							<nome>Bob</nome>
+						</Dati>
+					</code></pre>
 				</section>
 				<section>
 					<h3 style="color: mediumpurple;">
-						Esempio
+						TESTI
 					</h3>
 					<p>
-						&lt!-- questo è un commento --&gt
+						E’ possibile introdurre del testo che non viene
+						elaborato da XML, ma semplicemente restituito all’utente
 					</p>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="1-7">
+						<?xml version="1.0"?>
+						<Dati>
+							<![CDATA[
+							&ltnome&gtBob&lt/nome&gt
+							]]>
+						</Dati>
+					</code></pre>
 				</section>
-				<section>
-					<h3 style="color: mediumpurple;">
-						TESTO
-					</h3>
-					<p>
-						E’ possibile introdurre del testo in modo che questo non venga
-						elaborato da XML, ma venga semplicemente restituito all’utente,
-						grazie al costrutto CDATA
-					</p>
-				</section>
-				<section>
-					<h3 style="color: mediumpurple;">
-						Esempio
-					</h3>
-					<p>
-						&lt![CDATA[questo è un testo]]&gt
-					</p>
-				</section>
-			</section>
-			<section>
 				<section>
 					<h3 style="color: mediumvioletred;">
 						namespace
@@ -310,9 +285,8 @@
 						utilizzo
 					</h3>
 					<p>
-						In XML, i tipi di documenti si mescolano e si fondono tra loro in maniera complessa.
-						Lo stesso documento potrebbe avere alcuni elementi definiti in un vocabolario ed altri in un
-						altro. I namespace in XML si propone per risolvere questo problemi.
+						In XML lo stesso documento potrebbe avere alcuni elementi definiti in un vocabolario ed altri in un
+						altro. I namespace in XML si propone per risolvere questo problema.
 					</p>
 				</section>
 				<section>
@@ -320,36 +294,41 @@
 						struttura
 					</h3>
 					<p>
-						Ogni nome di elemento o attributo del documento XML èpreceduto da un prefisso che ne specifica
+						Aggiunge un prefisso ad ogni nome di elemento o attributo del documento XML che ne specifica
 						l'ambito.
-						Il prefisso èseparato da il carattere ‘:’ dal nome dell’elemento o dell’attributo.
-					</p>
+						Il prefisso è da ":" dal nome dell’elemento o dell’attributo.
+					</p><br>
+					<pre class="fragment"><code class="xml" data-trim data-line-numbers="1-7">
+						<?xml version="1.0"?>
+						<Dati>
+							<nome xmlns:namespace="value">Bob</nome>
+						</Dati>
+					</code></pre>
 				</section>
 				<section>
 					<h3 style="color: mediumvioletred;">
 						XMLNS
 					</h3>
 					<p>
-						L’attributo predefinito "xmlns" serve per introdurre i prefissi usati dai namespace del
-						documento.
-						Il valore dell’attributo è un URI (uniform resource indentifier )che ha solo un valore
+						xmlns serve per introdurre i prefissi usati dai namespace.
+						Il valore dell’attributo è un URI (uniform resource indentifier) che ha solo un valore
 						informativo.
 					</p>
 				</section>
 				<section>
 					<h3 style="color: mediumvioletred;">
-						Nome qualificato
+						Nomi qualificati
 					</h3>
 					<p>
-						Un nome che contiene prefisso dinamespace e nome locale viene detto"nome qualificato".
-						L’assenza di tale prefisso in xmlns indica la presenza diun namespace di default
+						Un nome che contiene il prefisso di namespace viene detto"nome qualificato".
+						L’assenza di tale prefisso al posto xmlns indica la presenza di un namespace di default
 					</p>
 				</section>
 				<section>
 					<h3 style="color: mediumvioletred;">
 						TIPOLOGIE DI NAMESPACE
 					</h3>
-					<h4>
+					<h4 class="fragment fade-up">
 						il namespace è diviso in:
 					</h4>
 					<ul>
@@ -363,7 +342,7 @@
 						All element types partition
 					</h3>
 					<p>
-						Contiene tutti i nomi degli elementi definiti nel namespace,
+						Include tutti i nomi degli elementi definiti nel namespace ed
 						ogni nome è unico
 					</p>
 				</section>
@@ -372,7 +351,7 @@
 						the global attibute partition
 					</h3>
 					<p>
-						Contiene i nomi di tutti gli attributi definiti come globali
+						Include i nomi di tutti gli attributi definiti come globali
 					</p>
 				</section>
 				<section>
@@ -381,7 +360,7 @@
 					</h3>
 					<p>
 						Ogni nome ha un namespace locale perciò gli attributi propri
-						di un elemento non debbono ripetere il prefisso di namespace
+						di un elemento non devono ripetere il prefisso di namespace
 					</p>
 				</section>
 			</section>
