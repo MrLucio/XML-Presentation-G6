@@ -389,8 +389,23 @@
 			<!--
 				SLIDES DAVID
 			-->
+
+			<!--
+					Introduzione:
+					- DTD
+					- Perché usare DTD
+					- I Parser
+					- Esempio di XML
+					- Esempio di DTD
+				-->
 			<section>
+				<!--
+					Introduzione
+				-->
 				<section>
+					<!--
+						DTD
+					-->
 					<div class="fragment" id="d-1">
 						<h1 class="fragment">DTD</h1>
 						<p class="fragment fade-up" style="display:inline-block">
@@ -405,9 +420,9 @@
 					</div>
 				</section>
 				<section>
-					<h3 class="fragment fade-left" style="color:#76ff03">Elementi</h3><br>
-					<h3 class="fragment fade-right" style="color: #f21a28;">Attributi</h3><br>
-					<h3 class="fragment fade-left" style="color:aqua">Entità</h3>
+					<h2 class="fragment fade-left" style="color:#76ff03">Elementi</h2><br>
+					<h2 class="fragment fade-right" style="color: #f21a28;">Attributi</h2><br>
+					<h2 class="fragment fade-left" style="color:aqua">Entità</h2>
 				</section>
 				<section>
 					<p>Un documento è<span class="fragment" style="color: #ff8a80;"> ben strutturato</span> se segue
@@ -416,20 +431,46 @@
 						un DTD</p>
 				</section>
 				<section>
+					<!-- 
+						Perché usare DTD
+					-->
 					<h2>Perché usare DTD?</h2>
 					<ul>
-						<li class="fragment">Tag: cosa, quando, dove e gli attributi</li>
+						<li class="fragment">Tag: cosa, quando, dove + attributi</li>
 						<li class="fragment">Permette all'XML di essere verificato legalmente</li>
 						<li class="fragment">Condivisione tra gruppi, coerenza strutturale</li>
 					</ul>
 				</section>
 				<section>
+					<!--
+						I Parser
+					-->
 					<h2>I Parser</h2>
 					<p class="fragment">Chiamati anche analizzatori, sono delle API
 						che confrontano il documento XML con un DTD, segnalando gli eventuali errori
 					</p>
 				</section>
+			</section>
+			<!--
+				Fine Introduzione
+			-->
+			<!--
+				Elementi:
+				- Descrittori
+				- Elementi senza figli
+				- Elementi con figli non strutturati
+				- Elementi con figli
+				- Elementi con contenuti misti
+				- Nomi e namespace
+			-->
+			<section>
+				<!--
+					Elementi
+				-->
 				<section>
+					<!--
+						Descrittori 1
+					-->
 					<h2 style="color: #76ff03;">Elementi</h2>
 					<ul>
 						<li class="fragment">Suffissi</li>
@@ -441,31 +482,316 @@
 						<p class="fragment">|&emsp;-->&emsp;oppure (or)&emsp;-->&emsp;section|chapter</p>
 				</section>
 				<section>
+					<!--
+						Descrittori 2
+					-->
 					<li class="fragment" style="text-align: left;">Raggruppamento</li>
 					<p class="fragment" style="text-align: left;">
 						()&emsp;-->&emsp;raggruppa&emsp;-->&emsp;(section|chapter)+</p>
 					</ul>
 				</section>
 				<section>
+					<!--
+						Slide introduttiva
+					-->
 					<h2 style="color:#76ff03">Tipi di elementi</h2>
-					<code>
-						<!ELEMENT nome categoria>
-					</code>
+				</section>
+				<section>
+					<!--
+						Elementi senza figli
+					-->
+					<h3>Elementi senza figli</h3>
+					<div class="fragment-stack">
+						<ul>
+							<div class="fragment fade-in-then-out">
+								<li>Nel DTD:
+									<pre>
+										<code data-trim data-line-numbers="1-3">
+											<!--
+												<!ELEMENT br EMPTY>
+											-->
+										</code>
+									</pre>
+								</li>
+							</div>
+							<div class="fragment">
+								<li>
+									Nell'XML: (L'elemento non ha contenuti ma può avere attributi)
+									<pre>
+										<code class="xml" data-trim data-line-numbers="1-5">
+											<br></br>
+											<!--
+												oppure
+											-->
+											</br>
+										</code>
+									</pre>
+								</li>
+							</div>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<!--
+						Elementi con figli non strutturati
+					-->
+					<h3>Elementi con figli non strutturati</h3>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<ul>
+								<li>ANY: qualsiasi tipo di dato, elemento anche non definito</li>
+								<li>#PCDATA: indica che solo i caratteri di tipo data possono essere utilizzati</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<p style="text-align: left;">Nel DTD:</p>
+							<pre>
+								<code data-trim data-line-numbers="1-3">
+									<!--
+										<!ELEMENT paragraph (#PCDATA)>
+									-->
+								</code>
+							</pre>
+							<p style="text-align: left;">Nell'XML:</p>
+							<pre>
+								<code class="xml" data-trim data-line-numbers="1">
+									<paragraph>A shot rang out!</paragraph>
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section>
+					<!--
+						Elementi con figli
+					-->
+					<h3>Elementi con figli</h3>
 					<ul>
-						<li>
-							Senza figli(EMPTY): nessun contenuto tra l'inizio e la fine del tag, ha attributi però
-						</li>
-						<li>
-							Figli non strutturati: come categoria ANY oppure #PCDATA
-						</li>
-						<li>
-							Elementi con figli: c'è una parentesi che raggruppa tutti i figli (almeno uno) e ognuno di
-							loro può avere a sua volta altri figli
-						</li>
+						<li>Tutti gli elementi devono essere dichiarati</li>
+						<li>I figli possono avere altri figli</li>
+					</ul>
+					<pre>
+						<code data-trim data-line-numbers="1-4">
+							<!--
+								<!ELEMENT novel (foreword, chapter+)>
+								<!ELEMENT novel (foreword, (chapter+|section))>
+							-->
+						</code>
+					</pre>
+				</section>
+				<section>
+					<!--
+						Elementi con contenuti misti
+					-->
+					<h3>Elementi con contenuti misti</h3>
+					<pre>
+						<code data-trim data-line-numbers="">
+							<!--
+								<!ELEMENT note (#PCDATA|message)*>
+							-->
+						</code>
+					</pre>
+					<ul>
+						<li>#PCDATA viene sempre prima</li>
+						<li>I separatori sono solo |</li>
+						<li>Il gruppo deve avere * (zero più)</li>
 					</ul>
 				</section>
+				<section>
+					<!--
+						Nomi e namespace
+					-->
+					<h3>Nomi e namespace</h3>
+					<p>I nomi degli elementi iniziano con 'lettera' o '_' e contengono: ABC 123 .  -  _  : </p>
+					<pre>
+						<code data-trim data-line-numbers="1-4">
+							<!--
+								<!ELEMENT chapter (paragraph+)>
+								<!ELEMENT myBook:chapter (myBook:paragraph+)>
+							-->
+						</code>
+					</pre>
+				</section>
 			</section>
-
+			<!--
+				Fine Elementi
+			-->
+			<!--
+				Attributi ed entità:
+				- Attributi
+				- Tipi di attributi importanti
+				- Requisiti
+				- Entità
+			-->
+			<section>
+				<!--
+					Attributi ed entità
+				-->
+				<section>
+					<!--
+						Slide introduttiva
+					-->
+					<h2 style="color: #f21a28;">Attributi ed entità</h2>
+				</section>
+				<section>
+					<!--
+						Attributi
+					-->
+					<h3>Attributi</h3>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<p>Un attributo descrive un'informazione che può essere immessa dentro il tag di apertura di un elemento</p>
+						</div>
+						<div class="fragment fade-in-then-out">
+							<p>In XML:</p>
+							<pre>
+								<code class="xml"  data-trim data-line-numbers="1">
+									<dog name="Spot" age="3"></dog>
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							<p>In DTD:</p>
+							<pre>
+								<code data-trim data-line-numbers="">
+									<!--
+									<!ATTLIST dog
+										name CDATA #REQUIRED
+										age CDATA #IMPLIED
+									-->
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section>
+					<!--
+						Tipi di attributi importanti
+					-->
+					<h3>Tipi di attributi importanti</h3>
+					<ul>
+						<li>CDATA: di valore carattere</li>
+						<li>(man | woman | child): un valore scelto da una lista</li>
+						<li>ID: un valore univoco di identificazione</li>
+						<li>NMTOKEN: un nome XML verificato (no numeri e spazi)</li>
+					</ul>
+				</section>
+				<section>
+					<!--
+						Requisiti
+					-->
+					<h3>Requisiti / Requirement</h3>
+					<pre>
+						<code data-trim data-line-numbers="1-3">
+							<!--
+								<!ATTLIST degree CDATA "PhD">
+							-->
+						</code>
+					</pre>
+					<ul>
+						<li>#REQUIRED: l'attributo è obbligatorio</li>
+						<li>#IMPLIED: l'attributo è opzionale</li>
+						<li>#FIXED "value": valore assegnato</li>
+					</ul>
+				</section>
+				<section>
+					<!--
+						Entità
+					-->
+					<h2>Entità</h2>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<p>Le entità sono un modo di includere testo fisso nel documento XML</p>
+						</div>
+						<div class="fragment fade-in-then-out">
+							<pre>
+								<code data-trim data-line-numbers="">
+									<!--
+										<!ENTITY copyright "Copyright Dr.Dave">
+										<!ENTITY copyright SYSTEM "MyURI">
+									-->
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							<pre>
+								<code class="xml" data-trim data-line-numbers="1">
+									This document is &copyright; 2002.
+								</code>
+							</pre>
+						</div>
+					</div>
+					
+				</section>
+			</section>
+			<!--
+				Fine Attributi ed entità
+			-->
+			<!--
+				Conclusione:
+				- Inline ed External DTD
+				- Limitazioni del DTD
+				- I validatori
+			-->
+			<section>
+				<!--
+					Conclusione
+				-->
+				<section>
+					<!--
+						Inline ed  External DTD
+					-->
+					<h3>Inline ed External DTD</h3>
+					<div class="fragment-stack">
+						<div class="fragment fade-in-then-out">
+							<pre>
+								<code data-trim data-line-numbers="1-9">
+								<!--
+									<?xml version=”1.0”>
+									<!DOCTYPE myRootElement[
+										Contenuto DTD
+									]>
+									<myRootElement>
+										Contenuto XML
+									</myRootElement>
+								-->
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							<pre>
+								<code data-trim data-line-numbers="1-4">
+									<!--
+										<!DOCTYPE myRootElement SYSTEM / PUBLIC
+										"http://www.mysite.com/mydoc.dtd">
+									-->
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section>
+					<!--
+						Limitazioni del DTD
+					-->
+					<h3>Limitazioni del DTD</h3>
+					<p>Il DTD è un linguaggio di controllo molto debole: no restrizioni sui contenuti,
+						solo 10 datatype e poche opzioni.
+					</p><br>
+					<p>
+						Il DTD non è scritto in XML: per fare i controlli c'è bisgono di un parser sia per l'XML e che il DTD.
+					</p>
+				</section>
+				<section>
+					<!--
+						I validatori
+					-->
+					<h3>
+						I validatori 
+					</h3>
+					<p> Si può fare il controllo degli errori di un XML con un DTD interno usano Internet Explore od Opera (si preferisce usare i DTD esterni)</p>
+				</section>
+			</section>
 
 			<!--
 				SLIDES LUCIANO
